@@ -1,16 +1,36 @@
-# L6_L7_38 — Elevator Dispatch
+## Code and Branch Coverage Testing
 
-Lab 6: Code and Branch Coverage
+### Objective
+The objective of this lab is to improve the test cases for the elevator dispatch application and measure statement and branch coverage using Python Coverage.py and pytest.
 
-## About
+### Test Files
+- `CodeCoverageTest_38_application.py` — Tests the application code to measure statement coverage.
+- `BranchCoverageTest_38_application.py` — Tests different decision outcomes to measure branch coverage.
 
-A small Python module that chooses elevator travel direction, door actions and which car to send to a call.
+### Coverage Results
+- **Statement coverage:** 100%
+- **Branch coverage:** 100%
+- **Statements missed:** 0
+- **Branches:** 28
+- **Partial branches:** 0
 
-## Files
+### Commands to Run
 
-| File | Description |
-|------|-------------|
-| `elevator_dispatch.py` | The module under test |
-| `test_elevator_dispatch.py` | Starter test file |
+Statement coverage:
 
-Refer to the lab handout for instructions.
+```bash
+python -m coverage erase
+python -m coverage run --source=elevator_dispatch -m pytest CodeCoverageTest_38_application.py -v
+python -m coverage report -m
+```
+
+Branch coverage:
+
+```bash
+python -m coverage erase
+python -m coverage run --branch --source=elevator_dispatch -m pytest BranchCoverageTest_38_application.py -v
+python -m coverage report -m
+```
+
+### Conclusion
+The test cases achieved 100% statement coverage and 100% branch coverage for the elevator dispatch application.
